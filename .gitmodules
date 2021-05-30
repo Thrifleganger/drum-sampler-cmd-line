@@ -1,0 +1,8 @@
+[submodule "lib/libsndfile"]
+	path = lib/libsndfile
+	url = git@github.com:libsndfile/libsndfile.git
+	branch = master
+[submodule "lib/rtaudio"]
+	path = lib/rtaudio
+	url = git@github.com:thestk/rtaudio.git
+	branch = master
