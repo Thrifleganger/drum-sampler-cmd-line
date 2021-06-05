@@ -25,7 +25,7 @@ add_subdirectory(lib/rtaudio)
 include_directories(lib/rtaudio)
 
 # Create an executable file and references the sources and header files that we write
-add_executable(${ProjectName} source/Main.cpp)
+add_executable(${ProjectName} source/Main.cpp source/SampleFile.h)
 
 # Link the newly build static libraries of libsndfile and rtaudio into the executable
 target_link_libraries(${ProjectName} sndfile)
