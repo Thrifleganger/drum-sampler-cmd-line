@@ -1,7 +1,10 @@
-﻿cmake_minimum_required (VERSION 3.8)
+﻿cmake_minimum_required(VERSION 3.17)
 
 set(CMAKE_CXX_STANDARD 17)
 set(ProjectName DrumSampler)
+
+# Create our project with a name that comes from the ProjectName variable
+project(${ProjectName})
 
 # Setting this will move the Cmake predefined targets such as ALL_BUILD and ZERO_CHECK into it's own directory
 # This avoids unnecessary noise in the solution view
@@ -13,9 +16,6 @@ set(BUILD_PROGRAMS OFF)
 set(BUILD_EXAMPLES OFF)
 set(BUILD_TESTING OFF)
 
-# Create our project with a name that comes from the ProjectName variable
-project(${ProjectName})
-
 # Add libsndfile library and add it's include directory
 add_subdirectory(lib/libsndfile)
 include_directories(lib/libsndfile/include)
@@ -25,7 +25,7 @@ add_subdirectory(lib/rtaudio)
 include_directories(lib/rtaudio)
 
 # Create an executable file and references the sources and header files that we write
-add_executable(${ProjectName} source/Main.cpp source/SampleFile.h)
+add_executable(${ProjectName} source/Main.cpp source/SampleFile.h source/SamplePlayer.h)
 
 # Link the newly build static libraries of libsndfile and rtaudio into the executable
 target_link_libraries(${ProjectName} sndfile)

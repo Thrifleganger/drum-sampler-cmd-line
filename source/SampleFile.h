@@ -1,6 +1,5 @@
 #pragma once
 
-#include <iostream>
 #include <sndfile.hh>
 
 class SampleFile
